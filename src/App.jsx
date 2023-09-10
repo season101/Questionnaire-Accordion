@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Questions from './Questions';
 import questions from './data';
 const App = () => {
   const [data, setData] = useState(questions);
@@ -6,11 +7,7 @@ const App = () => {
     <main>
       <section className="container">
         <h1>Questions</h1>
-        <ul>
-          {data.map((d) => {
-            return <li key={d.id}>{d.title}</li>;
-          })}
-        </ul>
+        <Questions data={data} />
       </section>
     </main>
   );
